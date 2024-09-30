@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+env:
+   ENVIRONMENT: development
+
+
 jobs:
     build:
         runs-on: windows-latest
