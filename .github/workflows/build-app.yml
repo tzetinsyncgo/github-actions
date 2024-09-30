@@ -1,0 +1,26 @@
+name: Build Application
+
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+    build:
+        runs-on: windows-latest
+
+        steps:
+
+          - name: Checkout Repository
+            uses: actions/checkout@v4
+
+          - name: Setup .NET
+            uses: actions/setup-dotnet@v4
+            with:
+              dotnet-version: ${{ vars.DOTNET_VERSION }}
+
+          - name: Restore Dependencies
+            run: dotnet restore
+
+          - name: Build API
+            run: dotnet build github-actions\github-actions.csproj --no-restore
