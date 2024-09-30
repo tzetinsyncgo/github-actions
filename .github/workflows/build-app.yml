@@ -23,4 +23,4 @@ jobs:
             run: dotnet restore
 
           - name: Build API
-            run: dotnet build github-actions\github-actions.csproj --no-restore
+            run: dotnet build github-actions-demo\github-actions-demo.csproj --no-restore
